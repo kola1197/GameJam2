@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6127,6 +6127,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6979305366888703274, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: playerPos
+      value: 
+      objectReference: {fileID: 1617986371}
+    - target: {fileID: 6979305366888703274, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: playerDamage
+      value: 
+      objectReference: {fileID: 272093719}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: playerPos
+      value: 
+      objectReference: {fileID: 1617986371}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: moveScript
+      value: 
+      objectReference: {fileID: 1617986368}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: HPBar
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: Valhalla
+      value: 
+      objectReference: {fileID: 301984669}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4b30f6e768907f0cacd73e2ee323553, type: 3}
 --- !u!1 &156282720
@@ -7532,7 +7562,7 @@ MonoBehaviour:
   cl3: {fileID: 8300000, guid: f5a3445f22cdc6a4fb76aaeb9cd5be9f, type: 3}
   mCamera: {fileID: 541799884}
   oldCamera: {fileID: 534669904}
-  withIntro: 0
+  withIntro: 1
 --- !u!114 &181882454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10536,6 +10566,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 269081509}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &272093719 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6179170753478875710, guid: 1b2e8ee1721471b4e85ac7093dc243a5,
+    type: 3}
+  m_PrefabInstance: {fileID: 33311071}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 123381dade5ec6946aa5f40062696057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &278024336
 GameObject:
   m_ObjectHideFlags: 0
@@ -15143,6 +15185,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6979305366888703274, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: playerPos
+      value: 
+      objectReference: {fileID: 1617986371}
+    - target: {fileID: 6979305366888703274, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: playerDamage
+      value: 
+      objectReference: {fileID: 272093719}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: playerPos
+      value: 
+      objectReference: {fileID: 1617986371}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: moveScript
+      value: 
+      objectReference: {fileID: 1617986368}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: HPBar
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: Valhalla
+      value: 
+      objectReference: {fileID: 301984669}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4b30f6e768907f0cacd73e2ee323553, type: 3}
 --- !u!1 &388219737
@@ -16298,6 +16370,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: playerPos
+      value: 
+      objectReference: {fileID: 1617986371}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: moveScript
+      value: 
+      objectReference: {fileID: 1617986368}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: HPBar
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: Valhalla
+      value: 
+      objectReference: {fileID: 301984669}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4b30f6e768907f0cacd73e2ee323553, type: 3}
 --- !u!1 &411021570
@@ -23000,6 +23092,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6979305366888703274, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: playerPos
+      value: 
+      objectReference: {fileID: 1617986371}
+    - target: {fileID: 6979305366888703274, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: playerDamage
+      value: 
+      objectReference: {fileID: 272093719}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: playerPos
+      value: 
+      objectReference: {fileID: 1617986371}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: moveScript
+      value: 
+      objectReference: {fileID: 1617986368}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: HPBar
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: Valhalla
+      value: 
+      objectReference: {fileID: 301984669}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4b30f6e768907f0cacd73e2ee323553, type: 3}
 --- !u!1 &610002085
@@ -24763,6 +24885,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6979305366888703274, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: playerPos
+      value: 
+      objectReference: {fileID: 1617986371}
+    - target: {fileID: 6979305366888703274, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: playerDamage
+      value: 
+      objectReference: {fileID: 272093719}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: playerPos
+      value: 
+      objectReference: {fileID: 1617986371}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: moveScript
+      value: 
+      objectReference: {fileID: 1617986368}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: HPBar
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: Valhalla
+      value: 
+      objectReference: {fileID: 301984669}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4b30f6e768907f0cacd73e2ee323553, type: 3}
 --- !u!1 &657655338
@@ -37781,6 +37933,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6979305366888703274, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: playerPos
+      value: 
+      objectReference: {fileID: 1617986371}
+    - target: {fileID: 6979305366888703274, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: playerDamage
+      value: 
+      objectReference: {fileID: 272093719}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: playerPos
+      value: 
+      objectReference: {fileID: 1617986371}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: moveScript
+      value: 
+      objectReference: {fileID: 1617986368}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: HPBar
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: Valhalla
+      value: 
+      objectReference: {fileID: 301984669}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4b30f6e768907f0cacd73e2ee323553, type: 3}
 --- !u!1 &1046523741
@@ -47620,6 +47802,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: playerPos
+      value: 
+      objectReference: {fileID: 1617986371}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: moveScript
+      value: 
+      objectReference: {fileID: 1617986368}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: HPBar
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: Valhalla
+      value: 
+      objectReference: {fileID: 301984669}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4b30f6e768907f0cacd73e2ee323553, type: 3}
 --- !u!1 &1323985346
@@ -48705,6 +48907,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6979305366888703274, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: playerPos
+      value: 
+      objectReference: {fileID: 1617986371}
+    - target: {fileID: 6979305366888703274, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: playerDamage
+      value: 
+      objectReference: {fileID: 272093719}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: playerPos
+      value: 
+      objectReference: {fileID: 1617986371}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: moveScript
+      value: 
+      objectReference: {fileID: 1617986368}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: HPBar
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: Valhalla
+      value: 
+      objectReference: {fileID: 301984669}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4b30f6e768907f0cacd73e2ee323553, type: 3}
 --- !u!1 &1353081448
@@ -54281,6 +54513,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: playerPos
+      value: 
+      objectReference: {fileID: 1617986371}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: moveScript
+      value: 
+      objectReference: {fileID: 1617986368}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: HPBar
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: Valhalla
+      value: 
+      objectReference: {fileID: 301984669}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4b30f6e768907f0cacd73e2ee323553, type: 3}
 --- !u!1 &1497362164
@@ -57919,6 +58171,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6979305366888703274, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: playerPos
+      value: 
+      objectReference: {fileID: 1617986371}
+    - target: {fileID: 6979305366888703274, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: playerDamage
+      value: 
+      objectReference: {fileID: 272093719}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: playerPos
+      value: 
+      objectReference: {fileID: 1617986371}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: moveScript
+      value: 
+      objectReference: {fileID: 1617986368}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: HPBar
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: Valhalla
+      value: 
+      objectReference: {fileID: 301984669}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4b30f6e768907f0cacd73e2ee323553, type: 3}
 --- !u!1 &1589302274
@@ -70561,6 +70843,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6979305366888703274, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: playerPos
+      value: 
+      objectReference: {fileID: 1617986371}
+    - target: {fileID: 6979305366888703274, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: playerDamage
+      value: 
+      objectReference: {fileID: 272093719}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4b30f6e768907f0cacd73e2ee323553, type: 3}
 --- !u!1 &1908889711
@@ -78039,6 +78331,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: playerPos
+      value: 
+      objectReference: {fileID: 1617986371}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: moveScript
+      value: 
+      objectReference: {fileID: 1617986368}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: HPBar
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6979305366888703272, guid: b4b30f6e768907f0cacd73e2ee323553,
+        type: 3}
+      propertyPath: Valhalla
+      value: 
+      objectReference: {fileID: 301984669}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4b30f6e768907f0cacd73e2ee323553, type: 3}
 --- !u!1 &2113647470
