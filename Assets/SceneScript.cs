@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SceneScript : MonoBehaviour
 {
     int counter=0;
-    public AudioSource audio;
+    public AudioSource audioM;
     public Text t;
     Movement[] leg = new Movement[8]; 
         bool LegioMove = false;
@@ -37,26 +37,26 @@ public class SceneScript : MonoBehaviour
                 leg[i] = G.GetComponent<Movement>();
                 leg[i].movementSpeed = 0.05f;
             }
-            audio.Play();
+            audioM.Play();
         }
         else
         {
             oldCamera.enabled = true;
             mCamera.enabled = false;
-            int numb = Random.Range(1,3);
+            int numb = Random.Range(1,4);
             switch (numb) 
             {
                 case 1:
-                    audio.clip = cl1;
+                    audioM.clip = cl1;
                     break;
                 case 2:
-                    audio.clip = cl2;
+                    audioM.clip = cl2;
                     break;
                 case 3:
-                    audio.clip = cl3;
+                    audioM.clip = cl3;
                     break;
             }
-            audio.Play();
+            audioM.Play();
         }
     }
 
