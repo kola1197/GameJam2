@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    public bool canMove = true;
     public float movementSpeed = 12.0f;
     private Vector3 desiredMovement;
     private CharacterController charController;
@@ -38,11 +39,14 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //Debug.Log(desiredMovement);
-        if (desiredMovement != Vector3.zero)
+        if (canMove)
         {
-            charController.Move(desiredMovement * movementSpeed);
-            desiredMovement = Vector3.zero;
+            //Debug.Log(desiredMovement);
+            if (desiredMovement != Vector3.zero)
+            {
+                charController.Move(desiredMovement * movementSpeed);
+                desiredMovement = Vector3.zero;
+            }
         }
     }
 }
