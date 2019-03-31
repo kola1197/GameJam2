@@ -35,8 +35,6 @@ public class DmageSckript : MonoBehaviour
             G = GameObject.Find(other.name);
             TrapSkript t = G.GetComponent<TrapSkript>();
             ChangeHp(-t.damage);
-
-
         }
     }
     public void Death()
@@ -48,7 +46,7 @@ public class DmageSckript : MonoBehaviour
         StartCoroutine("Respawn");
     }
 
-    private void ChangeHp(int deltaHP)
+    public void ChangeHp(int deltaHP)
     {
 
         hp += deltaHP;
