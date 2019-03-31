@@ -12,6 +12,7 @@ TagManager:
   - CheckPoint
   - Body
   - Weapon
+  - Germantcy
   layers:
   - Default
   - TransparentFX
