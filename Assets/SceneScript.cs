@@ -231,6 +231,8 @@ public class SceneScript : MonoBehaviour
                 case 2950:
                     textAlphaChenge = true;
                     //startGame();
+                    cameraMoveS = false;
+                    cameraMovez = false;
                     mCamera.transform.position = new Vector3(-116.16f,0.85f,-138.14f);
                     mCamera.transform.RotateAround(new Vector3(0, 1, 0), 45);
                     cameraMovef = false;
@@ -241,7 +243,7 @@ public class SceneScript : MonoBehaviour
                         tt[k].position = new Vector3(-129.74f - k,-20, -129.74f + k/2);
                          
                     }
-                    for (int i = 0; i < 8; i++)
+                    for (int i = 0; i < 5; i++)
                     {
                      
                          h[i].transform.position += new Vector3(0, 3, 0);
