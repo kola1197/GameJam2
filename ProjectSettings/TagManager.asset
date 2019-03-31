@@ -8,6 +8,8 @@ TagManager:
   - Tree
   - Soil
   - trap
+  - Aquila
+  - CheckPoint
   layers:
   - Default
   - TransparentFX
