@@ -12,7 +12,8 @@ public class SceneScript : MonoBehaviour
         bool LegioMove = false;
     public Camera mCamera;
     public Camera oldCamera;
-    bool cameraMove = false;
+    bool cameraMovef = false;
+    bool cameraMoveS = false;
 
 
     bool textAlphaChenge = false;
@@ -46,9 +47,13 @@ public class SceneScript : MonoBehaviour
                 v.desiredMovement = new Vector3(1,0,0);
             }
         }
-        if (cameraMove)
+        if (cameraMovef)
         {
-            mCamera.transform.localPosition += new Vector3(0, 0, 0.01f);
+            mCamera.transform.localPosition += new Vector3(0.01f, 0, -0.01f);
+        }
+        if (cameraMoveS)
+        {
+            mCamera.transform.localPosition += new Vector3(0.01f, 0, 0.01f);
         }
         Color c;
         if (textAlphaChenge)
@@ -97,7 +102,9 @@ public class SceneScript : MonoBehaviour
                 textAlphaChenge = true;
                 break;
             case 1300:
-                cameraMove = true;
+                mCamera.transform.position = new Vector3(-141f,3,-120f);
+                mCamera.transform.RotateAround(new Vector3(0,1,0),120);
+                cameraMovef = true;
                 oldCamera.enabled = false;
                 mCamera.enabled = true;
                 textAlphaChenge = false;
@@ -111,6 +118,10 @@ public class SceneScript : MonoBehaviour
                 textAlphaChenge = true;
                 break;
             case 1800:
+                mCamera.transform.position = new Vector3(-114f,3f,-110f);
+                mCamera.transform.RotateAround(new Vector3(0, 1, 0), 190);
+                cameraMovef = false;
+                cameraMoveS = true;
                 textAlphaChenge = false;
                 c = t.color;
                 c.a = 1f;
