@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public bool canMove = true;
+     public bool canMove = true;
     public float movementSpeed = 12.0f;
-    private Vector3 desiredMovement;
+    public Vector3 desiredMovement;
     private CharacterController charController;
     private Animator anim;
 
