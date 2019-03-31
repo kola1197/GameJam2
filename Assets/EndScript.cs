@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class EndScript : MonoBehaviour
 {
     int counter = 0;
-    public AudioSource audio;
     public Text t;
     public InputManager inpMan;
     public Transform playerTr;
@@ -19,7 +18,7 @@ public class EndScript : MonoBehaviour
          
     }
 
-    void StartEnding()
+    public void StartEnding()
     {
         inpMan.enabled = false;
         playerTr.position = new Vector3(120f, 0f, 120f);
