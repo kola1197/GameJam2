@@ -243,7 +243,7 @@ public class SceneScript : MonoBehaviour
                         tt[k].position = new Vector3(-129.74f - k,-20, -129.74f + k/2);
                          
                     }
-                    for (int i = 0; i < 8; i++)
+                    for (int i = 0; i < 5; i++)
                     {
                      
                          h[i].transform.position += new Vector3(0, 3, 0);
