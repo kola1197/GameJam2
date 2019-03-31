@@ -43,7 +43,7 @@ public class SceneScript : MonoBehaviour
         {
             oldCamera.enabled = true;
             mCamera.enabled = false;
-            int numb = Random.Range(1,3);
+            int numb = Random.Range(1,4);
             switch (numb) 
             {
                 case 1:
