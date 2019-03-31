@@ -233,6 +233,8 @@ public class SceneScript : MonoBehaviour
                     cameraMovez = false;
                     cameraMoveS = false;
                     //startGame();
+                    cameraMoveS = false;
+                    cameraMovez = false;
                     mCamera.transform.position = new Vector3(-118.3f,0.68f,-133.21f);
                     mCamera.transform.RotateAround(new Vector3(0, 1, 0), 300);
                     cameraMovef = false;
