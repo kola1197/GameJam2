@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class DmageSckript : MonoBehaviour
 {
+    public uint DeathCount = 0;
     public float hp = 100.0f;
     //public CapsuleCollider collider;
     public Transform playerPos;
@@ -25,38 +26,29 @@ public class DmageSckript : MonoBehaviour
         moveScript = GetComponent<Movement>();
         aquila = GetComponent<AquilaSystem>();
     }
-
-    private void OnTriggerEnter(Collider other)
+    
+    public virtual void Death()
     {
-        Debug.Log("Collision with " + other.gameObject.tag);
-        if (other.gameObject.tag == "trap")
-        {
-            Debug.Log("Collision sucksess");
-            G = GameObject.Find(other.name);
-            TrapSkript t = G.GetComponent<TrapSkript>();
-            ChangeHp(-t.damage);
-        }
-    }
-    public void Death()
-    {
+        DeathCount++;
         Debug.Log("you died");
-        Respawn();
+        //Respawn();
         moveScript.canMove = false;
         //here death skript
         StartCoroutine("Respawn");
     }
 
-    public void ChangeHp(int deltaHP)
+    public virtual void ChangeHp(float deltaHP)
     {
 
         hp += deltaHP;
         HPBar.fillAmount = hp / maxHP;
-        Debug.Log("HP now " + hp.ToString());
+
+        Debug.Log("HP now " + hp.ToString() + gameObject.name);
         if (hp > 150)
         {
             hp = -239;
         }
-        if (hp < 0)
+        if (hp <= 0)
         {
             Death();
         }
