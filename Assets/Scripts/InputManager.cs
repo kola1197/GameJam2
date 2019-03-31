@@ -9,12 +9,14 @@ public class InputManager : MonoBehaviour
     private Movement movSystem;
     private Aim aimSystem;
     private Attack attackSystem;
+    private AquilaSystem aquila;
 
     void Awake()
     {
         movSystem = GetComponent<Movement>();
         aimSystem = GetComponent<Aim>();
         attackSystem = GetComponent<Attack>();
+        aquila = GetComponent<AquilaSystem>();
     }
 
     // Update is called once per frame
@@ -25,6 +27,11 @@ public class InputManager : MonoBehaviour
         aimSystem.FaceForwardDirection(Input.mousePosition);
         if (Input.GetButtonDown("BaseAttack")) attackSystem.BaseAttack();
         if (Input.GetButtonDown("AltAttack")) attackSystem.AltAttack();
+        if (Input.GetButtonDown("Action"))
+        {
+            Debug.Log("Action Pressed");
+            aquila.AquilaAction();
+        }
     }
 }
 
