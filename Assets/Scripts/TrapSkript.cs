@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class TrapSkript : MonoBehaviour
 {
-    public BoxCollider collider;
-    public int damage = 80;
+    public bool canDamage = false;
+    public float damage = 80;
     // Start is called before the first frame update
-    void Start()
-    {
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (canDamage)
+        {
+            Debug.Log(other.transform.root.GetComponent<DmageSckript>());
+            if (other.gameObject.tag == "Body")
+            {
+                other.transform.root.GetComponent<DmageSckript>().ChangeHp(-damage);
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    
 }
