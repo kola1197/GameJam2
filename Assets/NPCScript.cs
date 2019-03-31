@@ -7,7 +7,6 @@ public class NPCScript : MonoBehaviour
 {
     public Transform playerPos;
     public DmageSckript playerDamage;
-    public BoxCollider radar;
     public int type=1;
     public float initHP = 100;
     public float initDamage = 50;
@@ -27,6 +26,8 @@ public class NPCScript : MonoBehaviour
     private float reloadTime;
     // Start is called before the first frame update
     private Attack attackSystem;
+    public float debuffSpeed = 1;
+
 
     void Start()
     {
@@ -37,22 +38,30 @@ public class NPCScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        BuffOnDeath();
-        if (triggered)
+        if (debuffSpeed > GetComponent<NPCHealthSystem>().HealthLost())
         {
-            if ((playerPos.position - transform.position).magnitude <= attackRange)
+            debuffSpeed = GetComponent<NPCHealthSystem>().HealthLost();
+            moves.speed *= debuffSpeed;
+        }
+        if (transform.parent != GetComponent<NPCHealthSystem>().Valhalla)
+        {
+            BuffOnDeath();
+            if (triggered)
             {
-                //here attack animation
-                if ((lastTimeReload + reload) < Time.time)
+                if ((playerPos.position - transform.position).magnitude <= attackRange)
                 {
-                    attackSystem.BaseAttack();
-                    lastTimeReload = Time.time;
+                    //here attack animation
+                    if ((lastTimeReload + reload) < Time.time)
+                    {
+                        attackSystem.BaseAttack();
+                        lastTimeReload = Time.time;
+                    }
                 }
-            }
-            else
-            {
-                moves.SetDestination(playerPos.position);
-                transform.forward = new Vector3((playerPos.position - transform.position).x, 0, (playerPos.position - transform.position).z);
+                else
+                {
+                    moves.SetDestination(playerPos.position);
+                    transform.forward = new Vector3((playerPos.position - transform.position).x, 0, (playerPos.position - transform.position).z);
+                }
             }
         }
     }
@@ -63,18 +72,25 @@ public class NPCScript : MonoBehaviour
         {
             for (int i = 0; i < playerPos.GetComponent<DmageSckript>().DeathCount - currentBuff; i++)
             {
-                HP += HP * buffStrength;
-                Damage += Damage * buffStrength;
-                Speed += Speed * buffStrength;
+                GetComponent<NPCHealthSystem>().setMaxHP(HP += HP * buffStrength);
+                attackSystem.weapon.GetComponent<TrapSkript>().damage += attackSystem.weapon.GetComponent<TrapSkript>().damage * buffStrength;
+                moves.speed += moves.speed * buffStrength;
             }
+            currentBuff = playerPos.GetComponent<DmageSckript>().DeathCount;
         }
     }
 
+    public void UnTrigger()
+    {
+        triggered = false;
+        moves.enabled = false;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
+            moves.enabled = true;
             triggered = true;
         }
     }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DmageSckript : MonoBehaviour
 {
-    public uint DeathCount = 0;
+    public int DeathCount = 0;
     public float hp = 100.0f;
     //public CapsuleCollider collider;
     public Transform playerPos;
@@ -14,12 +14,12 @@ public class DmageSckript : MonoBehaviour
     public Image DeathUI;
     public float respawnTime = 0.2f;
     GameObject G;
-    private float maxHP;
+    protected float maxHP;
     private AquilaSystem aquila;
     
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         maxHP = hp;
         playerPos = GameObject.FindWithTag("Player").transform;
@@ -70,6 +70,12 @@ public class DmageSckript : MonoBehaviour
         playerPos.position = aquila.respawn;
         aquila.RespawnAquila();
         Camera.main.transform.position += delta;
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Germantcy");
+        foreach (GameObject enemy in enemies)
+        {
+            enemy.GetComponent<NPCScript>().UnTrigger();
+            enemy.GetComponent<NPCHealthSystem>().Return();
+        }
         timer = 0;
         while (timer < respawnTime)
         {

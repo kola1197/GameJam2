@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AquilaSystem : MonoBehaviour
 {
+    public Transform Valhalla;
     public GameObject aquilaWorld;
     public GameObject aquilaOnBack;
     public Vector3 respawn;
@@ -66,7 +67,14 @@ public class AquilaSystem : MonoBehaviour
         aquilaWorld.SetActive(true);
         aquilaWorld.transform.position = player.transform.position;
         currentState = AquilaState.Hidden;
-        respawn = aquilaWorld.transform.position; 
+        respawn = aquilaWorld.transform.position;
+
+        NPCHealthSystem[] enemies = Valhalla.GetComponentsInChildren<NPCHealthSystem>();
+
+        foreach (NPCHealthSystem enemy in enemies)
+        {
+            enemy.fixedInValhalla = true;
+        }
     }
 
     private void DropAquila()
@@ -125,10 +133,24 @@ public class AquilaSystem : MonoBehaviour
 
     public void RespawnAquila()
     {
+        NPCHealthSystem[] enemies = Valhalla.GetComponentsInChildren<NPCHealthSystem>();
         if (currentState != AquilaState.Hidden)
         {
             DropAquila();
             aquilaWorld.transform.position = startAquillaPosition;
+
+            foreach (NPCHealthSystem enemy in enemies)
+            {
+                enemy.Return();
+            }
         }
+        else
+        {
+            foreach (NPCHealthSystem enemy in enemies)
+            {
+                if (!enemy.fixedInValhalla) enemy.Return();
+            }
+        }
+
     }
 }

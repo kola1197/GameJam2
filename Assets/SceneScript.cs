@@ -11,17 +11,21 @@ public class SceneScript : MonoBehaviour
     Movement[] leg = new Movement[8]; 
         bool LegioMove = false;
 
+    public Transform PlauerPos;
+    public Transform AquilaPos;
     public AudioClip cl1;
     public AudioClip cl2;
     public AudioClip cl3;
-
-
+    Transform[] h = new Transform[5];
+    Transform[] tt = new Transform[8];
     public Camera mCamera;
     public Camera oldCamera;
     bool cameraMovef = false;
     bool cameraMoveS = false;
-    public bool withIntro = true;
+    bool cameraMovet = false;
 
+    public bool withIntro = true;
+    bool cameraMovez = false;
     bool textAlphaChenge = false;
 
     // Start is called before the first frame update
@@ -30,14 +34,22 @@ public class SceneScript : MonoBehaviour
         if (withIntro)
         {
             GameObject G;
+            for (int i = 0; i < 5; i++)
+            {
+                G = GameObject.Find("h" + (i + 1).ToString() );
+                h[i] = G.GetComponent<Transform>();
+                h[i].transform.position += new Vector3(0,-3,0);
+            }
             for (int i = 0; i < 8; i++)
             {
-                G = GameObject.Find("Player" + (i + 1).ToString());
-                Transform tt = G.GetComponent<Transform>();
+                G = GameObject.Find("Player (" + (i + 1).ToString()+")");
+                tt[i] = G.GetComponent<Transform>();
                 leg[i] = G.GetComponent<Movement>();
                 leg[i].movementSpeed = 0.05f;
             }
+            
             audioM.Play();
+            cameraMovez = true;
         }
         else
         {
@@ -60,6 +72,26 @@ public class SceneScript : MonoBehaviour
         }
     }
 
+    public void startGame()
+    {
+        
+        oldCamera.enabled = true;
+        mCamera.enabled = false;
+        int numb = Random.Range(1, 4);
+        switch (numb)
+        {
+            case 1:
+                audioM.clip = cl1;
+                break;
+            case 2:
+                audioM.clip = cl2;
+                break;
+            case 3:
+                audioM.clip = cl3;
+                break;
+        }
+        audioM.Play();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -77,9 +109,17 @@ public class SceneScript : MonoBehaviour
                     v.desiredMovement = new Vector3(1, 0, 0);
                 }
             }
+            if (cameraMovez)
+            {
+                mCamera.transform.localPosition += new Vector3(0.01f, 0, 0);
+            }
             if (cameraMovef)
             {
                 mCamera.transform.localPosition += new Vector3(0.01f, 0, -0.01f);
+            }
+            if (cameraMovet)
+            {
+                mCamera.transform.localPosition += new Vector3(-0.01f, 0f, 0.01f);
             }
             if (cameraMoveS)
             {
@@ -187,6 +227,35 @@ public class SceneScript : MonoBehaviour
                     c.a = 1f;
                     t.color = c;
                     t.text = "Но не на марше";
+                    break;
+                case 2950:
+                    textAlphaChenge = true;
+                    cameraMovez = false;
+                    cameraMoveS = false;
+                    //startGame();
+                    cameraMoveS = false;
+                    cameraMovez = false;
+                    mCamera.transform.position = new Vector3(-116.16f,0.85f,-138.14f);
+                    mCamera.transform.RotateAround(new Vector3(0, 1, 0), 45);
+                    cameraMovef = false;
+                    cameraMovet = true;
+                    LegioMove = false;
+                    for (int k = 0; k < 8; k++)
+                    {
+                        tt[k].position = new Vector3(-129.74f - k,-20, -129.74f + k/2);
+                         
+                    }
+                    for (int i = 0; i < 5; i++)
+                    {
+                     
+                         h[i].transform.position += new Vector3(0, 3, 0);
+                    }
+                    break;
+                case 3700:
+                    textAlphaChenge = true;
+                    break;
+                case 3750:
+                    startGame();
                     break;
                 default: break;
             }
